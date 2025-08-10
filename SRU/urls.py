@@ -4,11 +4,11 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from core.registry import all_modules
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
 
     # Endpoints do uwierzytelniania (JWT)
-    path('api/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    # path('api/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path('api/auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
     # Endpoint do menu
     path('api/', include('core.api_urls')),
