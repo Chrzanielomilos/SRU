@@ -1,5 +1,12 @@
 # SRU
 
+## Aktualizacja kontenera
+
+### Windows
+```
+./Scripts/updatek8.bat
+```
+
 ## Rejestracja nowego modułu
 
 ### ./SRU/modules/module_name/apps.py 
