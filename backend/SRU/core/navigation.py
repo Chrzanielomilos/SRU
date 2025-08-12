@@ -1,4 +1,4 @@
-from core.registry import all_modules
+from SRU.core.registry import all_modules
 
 def get_menu_items_for(user):
     items = []

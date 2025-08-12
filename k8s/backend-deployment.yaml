@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: django-deployment
+  name: sru-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: django
+      app: sru-backend
   template:
     metadata:
       labels:
-        app: django
+        app: sru-backend
     spec:
       containers:
-      - name: django
-        image: django-app
-        imagePullPolicy: Always
+      - name: sru-backend
+        image: sru-backend:latest
+        # imagePullPolicy: Always
         ports:
         - containerPort: 8000

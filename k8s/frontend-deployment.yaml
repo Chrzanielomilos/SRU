@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sru-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sru-frontend
+  template:
+    metadata:
+      labels:
+        app: sru-frontend
+    spec:
+      containers:
+      - name: sru-frontend
+        image: sru-frontend
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
