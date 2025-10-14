@@ -5,7 +5,7 @@ import { parseErrorMessage } from '../../../sru_modules/auth/authUtils';
 import { useRouter } from 'next/navigation';
 import styles from '../page.module.css';
 import Information from '../information';
-import Navigator from '../menu';
+import Navigator from '../navigator';
 
 export default function LoginPage() {
 const [email, setEmail] = useState('');
