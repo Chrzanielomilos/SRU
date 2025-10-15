@@ -2,21 +2,13 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Login from './login/user/page';
 
 export default function LoginPage() {
   const router = useRouter();
 
-  const loggedIn:boolean=false;
-  if(!loggedIn){
-    useEffect(() => {
-    router.push('/login/user');
+  useEffect(() => {
+    router.push('/user/login');
   }, [router]);
-  }
 
-  return (
-    <div>
-      Hello
-    </div>
-  ); // optional: could also return null if you just want to redirect
+  return null; // optional: could also return null if you just want to redirect
 }

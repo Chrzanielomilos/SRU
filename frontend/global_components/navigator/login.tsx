@@ -1,5 +1,5 @@
 'use client';
-import styles from './page.module.css';
+import styles from '../page.module.css';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
@@ -21,24 +21,24 @@ export default function Navigator() {
         </li>
         <li>
           <Link
-            href="/login/user"
-            className={pathname === '/login/user' ? styles.active : ''}
+            href="/user"
+            className={pathname === '/user/login' ? styles.active : ''}
           >
             Użytkownik
           </Link>
         </li>
         <li>
           <Link
-            href="/login/admin"
-            className={pathname === '/login/admin' ? styles.active : ''}
+            href="/admin"
+            className={pathname === '/admin/login' ? styles.active : ''}
           >
             SKOS
           </Link>
         </li>
         <li>
           <Link
-            href="/login/walet"
-            className={pathname === '/login/walet' ? styles.active : ''}
+            href="/walet"
+            className={pathname === '/walet/login' ? styles.active : ''}
           >
             Walet
           </Link>

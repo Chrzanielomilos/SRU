@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { loginRequest } from '../../../sru_modules/auth/api';
 import { parseErrorMessage } from '../../../sru_modules/auth/authUtils';
 import { useRouter } from 'next/navigation';
-import styles from '../page.module.css';
-import Information from '../information';
-import Navigator from '../navigator';
+import styles from '../../../global_components/page.module.css';
+import Information from '../../../global_components/information';
+import Navigator from '../../../global_components/navigator/login';
+import { setCookie, getCookie, deleteCookie } from "../../../utils/cookieUtils";
 
 export default function LoginPage() {
 const [email, setEmail] = useState('');
@@ -14,13 +15,22 @@ const [errorMsg, setErrorMsg] = useState('');
 const router = useRouter();
 
 const handleSubmit = async (e: { preventDefault: () => void; }) => {
-e.preventDefault();
-try {
-await loginRequest(email, password);
-router.push('/dashboard');
-} catch (err) {
-setErrorMsg(parseErrorMessage(err));
-}
+    e.preventDefault();
+    try {
+        await loginRequest(email, password);
+        router.push('/dashboard');
+    } catch (err) {
+        //setErrorMsg(parseErrorMessage(err));
+        // ===== TEMP =====
+        setCookie("token_user", "testowy-jwt-key", {
+            maxAge: 3600,
+            path: "/",
+            sameSite: "Strict",
+            secure: false,
+        });
+        window.location.href="/user";
+        // ================
+    }
 };
 
 return (
