@@ -1,5 +1,5 @@
 export async function loginRequest(email, password) {
-  const res = await fetch('http://localhost:51135/api/auth/token/', { // TODO: zamienić porty
+  const res = await fetch('http://localhost:8000/api/auth/token/', {
     method: 'POST',
     credentials: 'include',
     headers: {

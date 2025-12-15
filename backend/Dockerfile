@@ -1,5 +1,6 @@
 FROM python:3.12.7
 WORKDIR /app
+ENV PYTHONPATH=/app
 COPY . .
 RUN pip install -r requirements.txt
 EXPOSE 8000

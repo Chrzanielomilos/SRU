@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
 
-    'core',
+    'SRU.core',
     'SRU.modules.user',
     'SRU.modules.auth',
 ]

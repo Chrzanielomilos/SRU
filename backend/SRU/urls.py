@@ -1,6 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+# Załadowanie modułów
+import SRU.core
+import SRU.modules.user
+import SRU.modules.auth
 from SRU.core.registry import all_modules
 
 urlpatterns = [
@@ -11,7 +16,7 @@ urlpatterns = [
     # path('api/auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
     # Endpoint do menu
-    path('api/', include('core.api_urls')),
+    path('api/', include('SRU.core.api_urls')),
 ]
 
 # Dynamiczne podpinanie każdego zarejestrowanego modułu pod /api/<slug>/
